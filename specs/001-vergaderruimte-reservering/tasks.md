@@ -74,12 +74,12 @@ Single project structuur per [plan.md](plan.md): `app/` (applicatiecode), `tests
 
 **Independent Test**: Eigen reservering wijzigen naar vrij tijdslot en apart annuleren; poging tot wijzigen van andermans reservering wordt geweigerd.
 
-- [ ] T016 [US2] Write failing unit test voor eigenaarschap-validatie (FR-007) in `tests/unit/test_reservation_ownership.py`
-- [ ] T017 [P] [US2] Write failing integration test voor wijzigen/annuleren + 403 bij andermans reservering (Quickstart Scenario 3) in `tests/integration/test_reservation_edit_cancel.py`
-- [ ] T018 [US2] Implement `reservation_service.wijzig_reservering()` (hergebruikt overlap-/tijdvalidatie uit T012, status → `gewijzigd`) in `app/services/reservation_service.py`
-- [ ] T019 [US2] Implement `reservation_service.annuleer_reservering()` (status → `geannuleerd`, eigenaarschapscontrole, maakt T016 groen) in `app/services/reservation_service.py`
-- [ ] T020 [US2] Implement GET/POST `/reservations/{id}/edit` en POST `/reservations/{id}/cancel` endpoints (maakt T017 groen, FR-005/FR-006/FR-007) in `app/routers/reservations.py`
-- [ ] T021 [P] [US2] Create Jinja2-template `app/templates/reservations_edit.html`
+- [X] T016 [US2] Write failing unit test voor eigenaarschap-validatie (FR-007) in `tests/unit/test_reservation_ownership.py`
+- [X] T017 [P] [US2] Write failing integration test voor wijzigen/annuleren + 403 bij andermans reservering (Quickstart Scenario 3) in `tests/integration/test_reservation_edit_cancel.py`
+- [X] T018 [US2] Implement `reservation_service.wijzig_reservering()` (hergebruikt overlap-/tijdvalidatie uit T012, status → `gewijzigd`) in `app/services/reservation_service.py`
+- [X] T019 [US2] Implement `reservation_service.annuleer_reservering()` (status → `geannuleerd`, eigenaarschapscontrole, maakt T016 groen) in `app/services/reservation_service.py`
+- [X] T020 [US2] Implement GET/POST `/reservations/{id}/edit` en POST `/reservations/{id}/cancel` endpoints (maakt T017 groen, FR-005/FR-006/FR-007) in `app/routers/reservations.py`
+- [X] T021 [P] [US2] Create Jinja2-template `app/templates/reservations_edit.html`
 
 **Checkpoint**: User Story 2 werkend, bovenop US1.
 
@@ -91,9 +91,9 @@ Single project structuur per [plan.md](plan.md): `app/` (applicatiecode), `tests
 
 **Independent Test**: Meerdere reserveringen met verschillende statussen aanmaken en controleren dat ze allemaal zichtbaar zijn in het overzicht.
 
-- [ ] T022 [P] [US3] Write failing integration test voor overzicht incl. historische/geannuleerde reserveringen (Quickstart Scenario 4, FR-008) in `tests/integration/test_reservation_overview.py`
-- [ ] T023 [US3] Implement overzichtsquery (alle statussen, gesorteerd op tijd) voor GET `/reservations` (maakt T022 groen) in `app/routers/reservations.py`
-- [ ] T024 [P] [US3] Create Jinja2-template `app/templates/reservations.html` (overzicht met statuslabel)
+- [X] T022 [P] [US3] Write failing integration test voor overzicht incl. historische/geannuleerde reserveringen (Quickstart Scenario 4, FR-008) in `tests/integration/test_reservation_overview.py`
+- [X] T023 [US3] Implement overzichtsquery (alle statussen, gesorteerd op tijd) voor GET `/reservations` (maakt T022 groen) in `app/routers/reservations.py`
+- [X] T024 [P] [US3] Create Jinja2-template `app/templates/reservations.html` (overzicht met statuslabel)
 
 **Checkpoint**: User Story 3 werkend, bovenop US1.
 
