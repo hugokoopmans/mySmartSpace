@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Mijn reserveringen{% endblock %}
+{% block content %}
+<h1>Mijn reserveringen</h1>
+<table>
+    <tr><th>Ruimte</th><th>Begin</th><th>Eind</th><th>Status</th><th></th></tr>
+    {% for r in reserveringen %}
+    <tr>
+        <td>{{ r.ruimte.naam }}</td>
+        <td>{{ r.begintijd }}</td>
+        <td>{{ r.eindtijd }}</td>
+        <td>{{ r.status.value }}</td>
+        <td>
+            {% if r.status.value != "geannuleerd" %}
+            <a href="/reservations/{{ r.id }}/edit">Wijzigen</a>
+            <form action="/reservations/{{ r.id }}/cancel" method="post" style="display:inline">
+                <button type="submit">Annuleren</button>
+            </form>
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
