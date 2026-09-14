@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}SmartSpace{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <nav>
+        <a href="/rooms">Vergaderruimtes</a>
+        {% if user %}
+            <a href="/reservations">Mijn reserveringen</a>
+            {% if user.rol.value == "beheerder" %}
+                <a href="/rooms/new">Nieuwe ruimte</a>
+            {% endif %}
+            <span>Ingelogd als {{ user.naam }} ({{ user.rol.value }})</span>
+            <form action="/logout" method="post" style="display:inline">
+                <button type="submit">Uitloggen</button>
+            </form>
+        {% else %}
+            <a href="/login">Inloggen</a>
+        {% endif %}
+    </nav>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

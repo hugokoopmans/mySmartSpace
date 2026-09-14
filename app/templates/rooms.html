@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Vergaderruimtes{% endblock %}
+{% block content %}
+<h1>Vergaderruimtes</h1>
+<table>
+    <tr><th>Naam</th><th>Capaciteit</th><th>Locatie</th><th></th></tr>
+    {% for ruimte in ruimtes %}
+    <tr>
+        <td>{{ ruimte.naam }}</td>
+        <td>{{ ruimte.capaciteit }}</td>
+        <td>{{ ruimte.locatie }}</td>
+        <td><a href="/reservations/new?ruimte_id={{ ruimte.id }}">Reserveren</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

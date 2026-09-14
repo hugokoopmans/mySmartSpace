@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Nieuwe reservering{% endblock %}
+{% block content %}
+<h1>Reservering aanmaken</h1>
+{% if fout %}<p class="foutmelding">{{ fout }}</p>{% endif %}
+<form method="post" action="/reservations/new">
+    <label for="ruimte_id">Ruimte</label>
+    <select name="ruimte_id" id="ruimte_id">
+        {% for r in ruimtes %}
+        <option value="{{ r.id }}" {% if ruimte_id == r.id %}selected{% endif %}>{{ r.naam }}</option>
+        {% endfor %}
+    </select>
+    <label for="begintijd">Begintijd</label>
+    <input type="datetime-local" name="begintijd" id="begintijd" required>
+    <label for="eindtijd">Eindtijd</label>
+    <input type="datetime-local" name="eindtijd" id="eindtijd" required>
+    <button type="submit">Reserveren</button>
+</form>
+{% endblock %}

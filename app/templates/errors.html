@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Fout - SmartSpace{% endblock %}
+
+{% block content %}
+    <section class="panel error-panel">
+        <h1>{{ status_code }} - {{ title }}</h1>
+        <p>{{ message }}</p>
+        {% if user %}
+            <p><a href="/rooms">Terug naar overzicht</a></p>
+        {% else %}
+            <p><a href="/login">Terug naar inloggen</a></p>
+        {% endif %}
+    </section>
+{% endblock %}

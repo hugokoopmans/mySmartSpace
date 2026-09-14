@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Nieuwe ruimte{% endblock %}
+{% block content %}
+<h1>Nieuwe vergaderruimte</h1>
+<form method="post" action="/rooms/new">
+    <label for="naam">Naam</label>
+    <input type="text" name="naam" id="naam" required>
+    <label for="capaciteit">Capaciteit</label>
+    <input type="number" name="capaciteit" id="capaciteit" min="1" required>
+    <label for="locatie">Locatie</label>
+    <input type="text" name="locatie" id="locatie" required>
+    <button type="submit">Aanmaken</button>
+</form>
+{% endblock %}
