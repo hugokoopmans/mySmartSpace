@@ -13,12 +13,15 @@ implementatiecode.
 ## Opstarten (lokaal)
 
 ```bash
-uvicorn app.main:app --reload
+cd /home/hugo/zandbak/mySmartSpace
+.venv/bin/uvicorn app.main:app --reload --port 8001
 ```
 
-- SQLite-bestand wordt bij eerste start aangemaakt en gevuld met seed-data:
-  minimaal 2 demo-ruimtes en 2 demo-accounts (1x rol `medewerker`, 1x rol
-  `beheerder`).
+- Het project gebruikt een lokale SQLite-database (`smartspace.db`) in de repo-root.
+- Bij eerste start wordt deze gevuld met seed-data: minimaal 2 demo-ruimtes en
+  3 demo-accounts (2x rol `medewerker`, 1x rol `beheerder`).
+- De app draait standaard op poort 8001 in deze demo-setup zodat een andere
+  lokale service op 8000 niet in de weg zit.
 
 ## Validatiescenario's
 

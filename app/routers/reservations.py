@@ -57,29 +57,9 @@ def nieuw_aanmaken(
             db, ruimte_id, user.id, datetime.fromisoformat(begintijd), datetime.fromisoformat(eindtijd)
         )
     except ReserveringValidatieError as exc:
-        return templates.TemplateResponse(
-            request,
-            "reservations_new.html",
-            {
-                "user": user,
-                "ruimtes": db.query(Vergaderruimte).filter(Vergaderruimte.verwijderd.is_(False)).all(),
-                "ruimte_id": ruimte_id,
-                "fout": str(exc),
-            },
-            status_code=422,
-        )
+        raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail=str(exc)) from exc
     except ReserveringConflictError as exc:
-        return templates.TemplateResponse(
-            request,
-            "reservations_new.html",
-            {
-                "user": user,
-                "ruimtes": db.query(Vergaderruimte).filter(Vergaderruimte.verwijderd.is_(False)).all(),
-                "ruimte_id": ruimte_id,
-                "fout": str(exc),
-            },
-            status_code=409,
-        )
+        raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail=str(exc)) from exc
     return RedirectResponse(url="/reservations", status_code=303)
 
 
@@ -140,19 +120,9 @@ def wijzig_indienen(
     except AutorisatieError as exc:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail=str(exc)) from exc
     except ReserveringValidatieError as exc:
-        return templates.TemplateResponse(
-            request,
-            "reservations_edit.html",
-            {"user": user, "reservering": reservering, "fout": str(exc)},
-            status_code=422,
-        )
+        raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail=str(exc)) from exc
     except ReserveringConflictError as exc:
-        return templates.TemplateResponse(
-            request,
-            "reservations_edit.html",
-            {"user": user, "reservering": reservering, "fout": str(exc)},
-            status_code=409,
-        )
+        raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail=str(exc)) from exc
     return RedirectResponse(url="/reservations", status_code=303)
 
 

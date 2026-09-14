@@ -19,11 +19,11 @@ specificatie, dan het plan, dan de taken, en pas daarna de implementatie.
 ```bash
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
-.venv/bin/uvicorn app.main:app --reload
+.venv/bin/uvicorn app.main:app --reload --port 8001
 ```
 
 Zie [quickstart.md](specs/001-vergaderruimte-reservering/quickstart.md) voor
-validatiescenario's en demo-accounts.
+validatiescenario's, demo-accounts en de verwachte HTTP-statussen.
 
 ## Tests
 

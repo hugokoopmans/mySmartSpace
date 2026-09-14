@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Ruimte wijzigen{% endblock %}
+{% block content %}
+<h1>Ruimte wijzigen</h1>
+<form method="post" action="/rooms/{{ ruimte.id }}/edit">
+    <label for="naam">Naam</label>
+    <input type="text" name="naam" id="naam" value="{{ ruimte.naam }}" required>
+    <label for="capaciteit">Capaciteit</label>
+    <input type="number" name="capaciteit" id="capaciteit" value="{{ ruimte.capaciteit }}" min="1" required>
+    <label for="locatie">Locatie</label>
+    <input type="text" name="locatie" id="locatie" value="{{ ruimte.locatie }}" required>
+    <button type="submit">Opslaan</button>
+</form>
+<form method="post" action="/rooms/{{ ruimte.id }}/delete">
+    <button type="submit">Verwijderen</button>
+</form>
+{% endblock %}

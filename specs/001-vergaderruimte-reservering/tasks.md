@@ -105,11 +105,11 @@ Single project structuur per [plan.md](plan.md): `app/` (applicatiecode), `tests
 
 **Independent Test**: Als beheerder een ruimte aanmaken en direct reserveerbaar zien; verwijderen van een ruimte met toekomstige reservering wordt geweigerd.
 
-- [ ] T025 [P] [US4] Write failing unit test voor verwijderregel (FR-009a: weigeren bij actieve toekomstreservering) in `tests/unit/test_room_deletion.py`
-- [ ] T026 [P] [US4] Write failing integration test voor ruimte aanmaken/wijzigen/verwijderen incl. rolcontrole beheerder (Quickstart Scenario 5) in `tests/integration/test_room_management.py`
-- [ ] T027 [US4] Implement GET/POST `/rooms/new` en GET/POST `/rooms/{id}/edit` met beheerder-rolcontrole (FR-009, FR-010) in `app/routers/rooms.py`
-- [ ] T028 [US4] Implement POST `/rooms/{id}/delete` met verwijderregel (maakt T025 groen) in `app/routers/rooms.py`
-- [ ] T029 [P] [US4] Create Jinja2-templates `app/templates/rooms_new.html` en `app/templates/rooms_edit.html`
+- [x] T025 [P] [US4] Write failing unit test voor verwijderregel (FR-009a: weigeren bij actieve toekomstreservering) in `tests/unit/test_room_deletion.py`
+- [x] T026 [P] [US4] Write failing integration test voor ruimte aanmaken/wijzigen/verwijderen incl. rolcontrole beheerder (Quickstart Scenario 5) in `tests/integration/test_room_management.py`
+- [x] T027 [US4] Implement GET/POST `/rooms/new` en GET/POST `/rooms/{id}/edit` met beheerder-rolcontrole (FR-009, FR-010) in `app/routers/rooms.py`
+- [x] T028 [US4] Implement POST `/rooms/{id}/delete` met verwijderregel (maakt T025 groen) in `app/routers/rooms.py`
+- [x] T029 [P] [US4] Create Jinja2-templates `app/templates/rooms_new.html` en `app/templates/rooms_edit.html`
 
 **Checkpoint**: User Story 4 werkend; alle user stories nu compleet.
 
@@ -119,9 +119,9 @@ Single project structuur per [plan.md](plan.md): `app/` (applicatiecode), `tests
 
 **Purpose**: Afronding na alle user stories
 
-- [ ] T030 [P] Create foutpagina-template met NL-meldingen voor 403/409/422-responses in `app/templates/errors.html`
-- [ ] T031 [P] Verifieer en actualiseer opstartinstructies in `quickstart.md` op basis van de daadwerkelijke implementatie
-- [ ] T032 Run volledige `pytest`-suite en bevestig dat alle FR-001 t/m FR-011 gedekt zijn door minstens één test (constitution principe IV gate)
+- [x] T030 [P] Create foutpagina-template met NL-meldingen voor 403/409/422-responses in `app/templates/errors.html`
+- [x] T031 [P] Verifieer en actualiseer opstartinstructies in `quickstart.md` op basis van de daadwerkelijke implementatie
+- [x] T032 Run volledige `pytest`-suite en bevestig dat alle FR-001 t/m FR-011 gedekt zijn door minstens één test (constitution principe IV gate)
 
 ---
 
