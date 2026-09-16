@@ -1,3 +1,13 @@
+<!--
+Sync Impact Report:
+- Version change: 1.0.0 -> 1.1.0
+- Modified principles: none
+- Added principles: VI. Material Design UI
+- Added sections: none
+- Removed sections: none
+- Deferred items: none
+-->
+
 # SmartSpace Constitution
 
 ## Core Principles
@@ -38,6 +48,14 @@ Er wordt geen echte identity-provider (SSO/Entra ID) geïmplementeerd. Dit is ee
 expliciete trainings-scope-beperking: de oplossing is in deze vorm niet geschikt
 voor productiegebruik zonder aanvullende, echte authenticatie en autorisatie.
 
+### VI. Material Design UI
+
+De gebruikersinterface volgt Material Design-principes voor layout, componenten,
+toegankelijkheid en interactie. Nieuwe en gewijzigde UI-elementen MOETEN
+consistente componentpatronen, duidelijke visuele hiërarchie, bruikbare
+toetsenbordinteractie en voldoende kleurcontrast bieden. Afwijkingen moeten in
+het plan worden gemotiveerd.
+
 ## Taal & Doelgroep
 
 De applicatie is Nederlandstalig en bedoeld voor lokaal/demo-gebruik (geen i18n,
@@ -51,4 +69,4 @@ wijzigingsdatum bijwerken) en een korte motivatie. Elke spec, elk plan en elke
 implementatie wordt getoetst aan deze principes; afwijkingen moeten expliciet
 gemotiveerd worden (bijv. in de "Complexity Tracking"-sectie van een plan).
 
-**Version**: 1.0.0 | **Ratified**: 2026-09-09 | **Last Amended**: 2026-09-09
+**Version**: 1.1.0 | **Ratified**: 2026-09-09 | **Last Amended**: 2026-09-16
